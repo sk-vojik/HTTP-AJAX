@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import FriendsList from './components/FriendsList'
+
 import axios from "axios";
 import './App.css';
 
@@ -24,15 +26,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Lambda Friends!</h1>
-        {this.state.error && <h3>{this.state.error}</h3>}
-
-        {this.state.friends.map(friend => (
-          <div>
-          <h2>{friend.name}</h2>
-          <p>{friend.age}</p>
-          <p>{friend.email}</p>
-          </div>
-        ))}
+      
+        <FriendsList friends={this.state.friends} /> 
       </div>
     );
   }
